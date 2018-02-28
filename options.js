@@ -1,13 +1,13 @@
 function save_options() {
   var subreddit = document.getElementById('subreddit').value;
-  var likesColor = document.getElementById('like').checked;
+  var updatetime = document.getElementById('updatetime').value;
   chrome.storage.sync.set({
     favoriteColor: color,
     likesColor: likesColor
   }, function() {
     // Update status to let user know options were saved.
     var status = document.getElementById('status');
-    status.textContent = 'Options saved.';
+    status.innerHtml = 'Options saved.';
     setTimeout(function() {
       status.textContent = '';
     }, 750);
