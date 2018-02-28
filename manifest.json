@@ -16,7 +16,7 @@
       ],
       "js": ["jquery.js", "content.js"]
     }
-  ]
+  ],
   
   "permissions": [
    "activeTab"
