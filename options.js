@@ -1,5 +1,5 @@
 function save_options() {
-  var color = document.getElementById('').value;
+  var subreddit = document.getElementById('subreddit').value;
   var likesColor = document.getElementById('like').checked;
   chrome.storage.sync.set({
     favoriteColor: color,
