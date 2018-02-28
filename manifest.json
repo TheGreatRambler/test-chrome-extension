@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Ad clicker",
-  "description": "This extension will click all ads on a page",
+  "description": "This extension will do something... not sure what yet",
   "version": "1.0",
 
   "browser_action": {
