@@ -1,10 +1,11 @@
 function save_options() {
   var subreddit = document.getElementById('subreddit').value;
   var updatetime = document.getElementById('updatetime').value;
+  var postsnum = document.getElementById('postsnum').value;
   chrome.storage.sync.set({
     timebetweenupdates: updatetime,
     chosensubreddit: subreddit,
-    numofpoststoreturn: 1
+    numofpoststoreturn: postsnum
   }, function() {
     // Update status to let user know options were saved.
     var status = document.getElementById('status');
@@ -17,12 +18,10 @@ function save_options() {
 
 function restore_options() {
   // Use default value color = 'red' and likesColor = true.
-  chrome.storage.sync.get({
-    favoriteColor: 'red',
-    likesColor: true
-  }, function(items) {
-    document.getElementById('color').value = items.favoriteColor;
-    document.getElementById('like').checked = items.likesColor;
+  chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststoreturn"], function(items) {
+    document.getElementById('updatetime').value = items.timebetweenupdates;
+    document.getElementById('subreddit').value = items.chosensubreddit;
+    document.getElementById('postsnum').value = items.numofpoststoreturn;
   });
 }
 
