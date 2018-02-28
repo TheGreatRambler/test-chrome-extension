@@ -9,12 +9,9 @@
    "default_popup": "popup.html"
   },
   
-  "content_scripts": [
+  "background": [
     {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": ["jquery.js", "content.js"]
+      "scripts": ["jquery.js", "content.js"]
     }
   ],
   
