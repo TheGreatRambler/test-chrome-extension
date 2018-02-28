@@ -3,19 +3,23 @@ var timebetweenupdates = 30; // in seconds
 var chosensubreddit = "";
 var numofpoststoreturn = 1;
 
-function returnredditurl(subreddit, maxnumofupvotes) {
-  return "reddit.com/r/" + subreddit + "/new.json?sort=new&limit=" + numofpoststoreturn;
+function returnredditurl(subreddit, n) {
+  return "reddit.com/r/" + subreddit + "/new.json?sort=new&limit=" + n;
 }
 
 function checkforredditposts() {
   if (continue && chosensubreddit) {
     $.ajax({
       crossDomain: true,
-      dataType: "json",
-      url: 
+      dataType: "text",
+      url: returnredditurl(chosensubreddit, numofpoststoreturn)
     }).done(function(data) {
-      console.log(data);
-      window.setTimeout(checkforredditposts, timebetweenupdates * 1000);
+    chrome.tabs.getSelected(null, function(tab){
+      chrome.tabs.executeScript(tab.id, {
+        file: "displaypost.js?data=" + data
+      }, function(response) {});
+    });
+    window.setTimeout(checkforredditposts, timebetweenupdates * 1000);
     });
   }
 }
