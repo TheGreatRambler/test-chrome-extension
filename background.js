@@ -2,7 +2,7 @@
 chrome.runtime.onInstalled.addListener(function(dataobject) {
     if (dataobject.reason === 'install') {
         chrome.tabs.create({
-            url: chrome.extension.getURL('startpage.html')
+            url: chrome.extension.getURL('options.html')
         }, function(tab) {});
     }
 });
