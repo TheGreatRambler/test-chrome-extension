@@ -8,4 +8,5 @@ function getParameterByName(name) {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-var currentposts = getParameterByName("data");
+var currentposts = JSON.parse(getParameterByName("data"));
+console.log(currentposts);
