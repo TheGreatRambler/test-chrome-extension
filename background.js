@@ -1,3 +1,13 @@
+//Needed for first installation
+chrome.runtime.onInstalled.addListener(function (dataobject) {
+  if (dataobject.reason === 'install') {
+    chrome.tabs.create({
+      url: chrome.extension.getURL('startpage.html')
+    }, function (tab) {});
+  }
+});
+// end
+
 var continue = true;
 var timebetweenupdates = 30; // in seconds
 var chosensubreddit = "";
