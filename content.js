@@ -1,3 +1,4 @@
+/*
 function clickads() {
   $("iframe").each(function() {
     var element = $(this);
@@ -9,3 +10,6 @@ function clickads() {
 }
 
 clickads();
+*/
+
+// Google is too smart...
