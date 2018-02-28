@@ -1,9 +1,15 @@
 {
   "manifest_version": 2,
+  "default_locale": "en",
 
   "name": "Reddit post updater",
   "description": "Gives you a new reddit post whenever you need one",
   "version": "1.0",
+  
+  "author": "TheGreatRambler",
+  "homepage_url": "thegreatrambler.com",
+  
+  "options_page": "options.html",
 
   "browser_action": {
    "default_popup": "popup.html"
