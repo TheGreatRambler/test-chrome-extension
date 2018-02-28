@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Ad clicker",
-  "description": "This extension will do something... not sure what yet",
+  "name": "Reddit post updater",
+  "description": "Gives you a new reddit post whenever you need one",
   "version": "1.0",
 
   "browser_action": {
