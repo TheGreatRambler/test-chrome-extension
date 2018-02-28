@@ -1,7 +1,7 @@
 function getadlinks() {
   var alllinks = [];
-  $("a").each(function(item) {
-    alllinks.push(item);
+  $("a").each(function() {
+    alllinks.push(this);
   });
   return alllinks;
 }
