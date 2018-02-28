@@ -1,9 +1,5 @@
-function getadlinks() {
-  var alllinks = [];
-  $("a").each(function() {
-    alllinks.push(this);
+function clickads() {
+  $("iframe").each(function() {
+    $(this).click();
   });
-  return alllinks;
 }
-
-console.log(getadlinks());
