@@ -3,7 +3,7 @@ function save_options() {
   var updatetime = document.getElementById('updatetime').value;
   chrome.storage.sync.set({
     timebetweenupdates: updatetime,
-    likesColor: likesColor
+    chosensubreddit: subreddit
   }, function() {
     // Update status to let user know options were saved.
     var status = document.getElementById('status');
