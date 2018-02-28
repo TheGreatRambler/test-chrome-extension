@@ -1,15 +1,21 @@
-/*
-function clickads() {
-  $("iframe").each(function() {
-    var element = $(this);
-    if (element[0].id.indexOf("google_ads_iframe") != -1) {
-      var link = element.find('a');
-      link.click();
-    }
-  });
+var continue = true;
+var timebetweenupdates = 30; // in seconds
+var chosensubreddit = "";
+var numofpoststoreturn = 1;
+
+function returnredditurl(subreddit, maxnumofupvotes) {
+  return "reddit.com/r/" + subreddit + "/new.json?sort=new&limit=" + numofpoststoreturn;
 }
 
-clickads();
-*/
-
-// Google is too smart...
+function checkforredditposts() {
+  if (continue && chosensubreddit) {
+    $.ajax({
+      crossDomain: true,
+      dataType: "json",
+      url: 
+    }).done(function(data) {
+      console.log(data);
+      window.setTimeout(checkforredditposts, timebetweenupdates * 1000);
+    });
+  }
+}
