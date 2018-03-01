@@ -51,7 +51,11 @@ function dothestuff() {
                         dataType: "text",
                         url: returnredditurl(chosensubreddit, numofpoststoreturn)
                     }).done(function(data) {
-                        chrome.tabs.getSelected(null, function(tab) {
+                        chrome.tabs.query({
+                            "currentWindow": true,
+                            "status": true,
+                            "active": true
+                        }, function(tab) {
                             console.log("got the tab: ", tab);
                             chrome.tabs.executeScript(tab.id, {
                                 file: "displaypost.js?data=" + data + "&timetokeepup=" + timeofpostsappear
