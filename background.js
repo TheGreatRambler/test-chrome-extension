@@ -2,9 +2,11 @@
 chrome.runtime.onInstalled.addListener(function(dataobject) {
     if (dataobject.reason === 'install') {
         if (chrome.runtime.openOptionsPage) {
-            chrome.runtime.openOptionsPage();
+            chrome.runtime.openOptionsPage(function() {});
         } else {
-            window.open(chrome.runtime.getURL('options.html'));
+            chrome.tabs.create({
+                url: chrome.runtime.getURL('options.html')
+            });
         }
     }
 });
