@@ -29,6 +29,7 @@ currentposts.data.children.forEach(function (post) {
   if (post.kind === "t3") {
     var element = $(document.createElement('img'));
     element.attr("src", post.data.url);
+    element.attr("width", "10%");
     postsarray.push(element);
   }
 });
