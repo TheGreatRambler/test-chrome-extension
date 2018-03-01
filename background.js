@@ -1,3 +1,5 @@
+var defaulttime = 30000;
+
 var timesincelastpost = 0;
 setInterval(function() {
     timesincelastpost++;
@@ -43,7 +45,6 @@ chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststor
                 dataType: "text",
                 url: returnredditurl(chosensubreddit, numofpoststoreturn)
             }).done(function(data) {
-                timesincelastpost = 0;
                 chrome.tabs.getSelected(null, function(tab) {
                     chrome.tabs.executeScript(tab.id, {
                         file: "displaypost.js?data=" + data + "&timetokeepup=" + timeofpostsappear
@@ -53,13 +54,14 @@ chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststor
         } else {
             console.log("no.");
         }
-        console.log("time to next check: " + timebetweenupdates + " secomds");
+        console.log("time to next check: " + (timebetweenupdates || defaulttime) + " seconds");
+        timesincelastpost = 0;
         createtimeout();
     }
     
     function createtimeout() {
         chrome.alarms.create("update", {
-            when: (Date.now() + (timebetweenupdates * 1000)) || (Date.now() + 30000)
+            when: (Date.now() + (timebetweenupdates * 1000)) || (Date.now() + defaulttime)
         });
     }
     
