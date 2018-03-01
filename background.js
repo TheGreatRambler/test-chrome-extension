@@ -49,4 +49,6 @@ chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststor
             });
         }
     }
+    
+    checkforredditposts();
 });
