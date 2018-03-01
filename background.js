@@ -10,20 +10,19 @@ chrome.runtime.onInstalled.addListener(function(dataobject) {
 });
 // end
 
-var
-continue = true;
-chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststoreturn"], function(items) {
+var continue = true;
+chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststoreturn", "timetokeepup"], function(items) {
     var timebetweenupdates = items[0]; // in seconds
     var chosensubreddit = items[1];
     var numofpoststoreturn = items[2];
+    var timeofpostsappear = items[3];
 
     function returnredditurl(subreddit, n) {
         return "reddit.com/r/" + subreddit + "/new.json?sort=new&limit=" + n;
     }
 
     function checkforredditposts() {
-        if (
-            continue && chosensubreddit) {
+        if (continue && chosensubreddit) {
             $.ajax({
                 crossDomain: true,
                 dataType: "text",
@@ -31,7 +30,7 @@ chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststor
             }).done(function(data) {
                 chrome.tabs.getSelected(null, function(tab) {
                     chrome.tabs.executeScript(tab.id, {
-                        file: "displaypost.js?data=" + data
+                        file: "displaypost.js?data=" + data + "&timetokeepup=" + timeofpostsappear;
                     }, function(response) {});
                 });
                 window.setTimeout(checkforredditposts, timebetweenupdates * 1000);
