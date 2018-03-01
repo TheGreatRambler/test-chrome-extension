@@ -59,7 +59,7 @@ chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststor
     
     function createtimeout() {
         chrome.alarms.create("update", {
-            when: Date.now() + (timebetweenupdates * 1000)
+            when: (Date.now() + (timebetweenupdates * 1000)) || (Date.now() + 30000)
         });
     }
     
