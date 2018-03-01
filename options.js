@@ -7,7 +7,6 @@ function save_options() {
     chosensubreddit: subreddit,
     numofpoststoreturn: postsnum
   }, function() {
-    // Update status to let user know options were saved.
     var status = document.getElementById('status');
     status.innerHtml = 'Options saved.';
     setTimeout(function() {
@@ -17,7 +16,6 @@ function save_options() {
 }
 
 function restore_options() {
-  // Use default value color = 'red' and likesColor = true.
   chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststoreturn"], function(items) {
     document.getElementById('updatetime').value = items.timebetweenupdates;
     document.getElementById('subreddit').value = items.chosensubreddit;
