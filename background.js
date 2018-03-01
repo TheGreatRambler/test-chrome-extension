@@ -38,7 +38,7 @@ function dothestuff() {
             var timeofpostsappear = items.timetokeepup;
 
             function returnredditurl(subreddit, n) {
-                return "reddit.com/r/" + subreddit + "/new.json?sort=new&limit=" + n;
+                return "https://www.reddit.com/r/" + subreddit + "/new.json?sort=new&limit=" + n;
             }
 
             function checkforredditposts() {
