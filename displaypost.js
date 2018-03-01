@@ -30,6 +30,7 @@ currentposts.data.children.forEach(function (post) {
     var element = $(document.createElement('img'));
     element.attr("src", post.data.url);
     element.attr("width", "10%");
+    element.attr("alt", "created by " + post.data.author);
     postsarray.push(element);
   }
 });
