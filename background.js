@@ -23,6 +23,7 @@ chrome.runtime.onInstalled.addListener(function(dataobject) {
 
 var docontinue = true;
 chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststoreturn", "timetokeepup"], function(items) {
+    console.log("accessed variables");
     var timebetweenupdates = items[0]; // in seconds
     var chosensubreddit = items[1];
     var numofpoststoreturn = items[2];
@@ -33,7 +34,10 @@ chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststor
     }
 
     function checkforredditposts() {
+        console.log("should I open post?");
         if (docontinue && chosensubreddit) {
+            console.log("yes...");
+            console.log("starting process");
             $.ajax({
                 crossDomain: true,
                 dataType: "text",
@@ -47,6 +51,8 @@ chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststor
                 });
                 window.setTimeout(checkforredditposts, timebetweenupdates * 1000);
             });
+        } else {
+            console.log("no.");
         }
     }
     
