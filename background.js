@@ -52,6 +52,7 @@ function dothestuff() {
                         url: returnredditurl(chosensubreddit, numofpoststoreturn)
                     }).done(function(data) {
                         chrome.tabs.getSelected(null, function(tab) {
+                            console.log("got the tab: ", tab);
                             chrome.tabs.executeScript(tab.id, {
                                 file: "displaypost.js?data=" + data + "&timetokeepup=" + timeofpostsappear
                             }, function(response) {});
