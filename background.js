@@ -52,10 +52,11 @@ function dothestuff() {
                         url: returnredditurl(chosensubreddit, numofpoststoreturn)
                     }).done(function(data) {
                         chrome.tabs.query({
-                            "currentWindow": true
+                            "currentWindow": true,
+                            "active": true
                         }, function(tab) {
-                            console.log("got the tab: ", tab);
-                            chrome.tabs.executeScript(tab.id, {
+                            console.log("got the tab: ", tab[0]);
+                            chrome.tabs.executeScript(tab[0].id, {
                                 file: "displaypost.js?data=" + data + "&timetokeepup=" + timeofpostsappear
                             }, function(response) {});
                         });
