@@ -3,12 +3,14 @@ function save_options() {
   var updatetime = document.getElementById('updatetime').value;
   var postsnum = document.getElementById('postsnum').value;
   var timetokeepup = document.getElementById('timetokeepup').value;
+  console.log("options set: ", subreddit, updatetime, postsnum, timetokeepup);
   chrome.storage.sync.set({
     timebetweenupdates: updatetime,
     chosensubreddit: subreddit,
     numofpoststoreturn: postsnum,
     timetokeepup: timetokeepup
   }, function() {
+    console.log("done");
     var status = document.getElementById('status');
     status.innerHtml = 'Options saved.';
     setTimeout(function() {
