@@ -28,6 +28,8 @@ function restore_options() {
   });
 }
 
+console.log(document);
+
 document.addEventListener('DOMContentLoaded', restore_options);
 document.getElementById('optionssubmit').addEventListener('click',
     save_options);
