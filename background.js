@@ -26,10 +26,10 @@ chrome.runtime.onInstalled.addListener(function(dataobject) {
 var docontinue = true;
 chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststoreturn", "timetokeepup"], function(items) {
     console.log("accessed variables: ", items);
-    var timebetweenupdates = items[0]; // in seconds
-    var chosensubreddit = items[1];
-    var numofpoststoreturn = items[2];
-    var timeofpostsappear = items[3];
+    var timebetweenupdates = items.timebetweenupdates; // in seconds
+    var chosensubreddit = items.chosensubreddit;
+    var numofpoststoreturn = items.numofpoststoreturn;
+    var timeofpostsappear = items.timetokeepup;
 
     function returnredditurl(subreddit, n) {
         return "reddit.com/r/" + subreddit + "/new.json?sort=new&limit=" + n;
