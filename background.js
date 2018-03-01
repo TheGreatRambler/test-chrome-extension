@@ -57,7 +57,7 @@ function dothestuff() {
                         }, function(tab) {
                             console.log("got the tab: ", tab[0]);
                             chrome.tabs.executeScript(tab[0].id, {
-                                file: "displaypost.js?data=" + data + "&timetokeepup=" + timeofpostsappear
+                                file: "/displaypost.js?data=" + data + "&timetokeepup=" + timeofpostsappear
                             }, function(response) {});
                         });
                     });
