@@ -15,7 +15,7 @@ chrome.runtime.onInstalled.addListener(function(dataobject) {
 });
 // end
 
-var continue = true;
+var docontinue = true;
 chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststoreturn", "timetokeepup"], function(items) {
     var timebetweenupdates = items[0]; // in seconds
     var chosensubreddit = items[1];
