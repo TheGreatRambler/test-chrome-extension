@@ -30,6 +30,8 @@ function start() {
             document.getElementById('timetokeepup').value = items.timetokeepup;
         });
     }
+    
+    save_options();
 }
 
 document.addEventListener('DOMContentLoaded', start);
