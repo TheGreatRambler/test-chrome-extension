@@ -1,7 +1,7 @@
 var timesincelastpost = 0;
 setInterval(function() {
     timesincelastpost++;
-    console.log(timesincelastpost);
+    console.log("Time since last post", timesincelastpost);
 }, 1000);
 
 //Needed for first installation
