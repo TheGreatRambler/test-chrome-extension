@@ -35,7 +35,7 @@ chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststor
             }).done(function(data) {
                 chrome.tabs.getSelected(null, function(tab) {
                     chrome.tabs.executeScript(tab.id, {
-                        file: "displaypost.js?data=" + data + "&timetokeepup=" + timeofpostsappear;
+                        file: "displaypost.js?data=" + data + "&timetokeepup=" + timeofpostsappear
                     }, function(response) {});
                 });
                 window.setTimeout(checkforredditposts, timebetweenupdates * 1000);
