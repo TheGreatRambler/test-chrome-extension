@@ -1,3 +1,9 @@
+var timesincelastpost = 0;
+setInterval(function() {
+    timesincelastpost++;
+    console.log(timesincelastpost);
+}, 1000);
+
 //Needed for first installation
 chrome.runtime.onInstalled.addListener(function(dataobject) {
     if (dataobject.reason === 'install') {
@@ -33,6 +39,7 @@ chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststor
                 dataType: "text",
                 url: returnredditurl(chosensubreddit, numofpoststoreturn)
             }).done(function(data) {
+                timesincelastpost = 0;
                 chrome.tabs.getSelected(null, function(tab) {
                     chrome.tabs.executeScript(tab.id, {
                         file: "displaypost.js?data=" + data + "&timetokeepup=" + timeofpostsappear
