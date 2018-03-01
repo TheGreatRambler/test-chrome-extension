@@ -1,2 +1,3 @@
-# test chrome extension
-Testing out some chrome experiment stuff
+# Reddit Posts
+
+Get updates on reddit posts regularly!
