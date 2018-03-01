@@ -49,11 +49,11 @@ chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststor
                         file: "displaypost.js?data=" + data + "&timetokeepup=" + timeofpostsappear
                     }, function(response) {});
                 });
-                window.setTimeout(checkforredditposts, timebetweenupdates * 1000);
             });
         } else {
             console.log("no.");
         }
+        window.setTimeout(checkforredditposts, timebetweenupdates * 1000);
     }
     
     checkforredditposts();
