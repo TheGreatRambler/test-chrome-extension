@@ -5,6 +5,7 @@
   "name": "Reddit post updater",
   "description": "Gives you a new reddit post whenever you need one",
   "version": "1.0",
+  "version_name": "alpha",
   
   "author": "TheGreatRambler",
   "homepage_url": "thegreatrambler.com",
