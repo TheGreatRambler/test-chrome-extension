@@ -65,7 +65,7 @@ chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststor
     
     createtimeout();
     
-    chrome.alarms.onAlarm.addListener(function (){
+    chrome.alarms.onAlarm.addListener(function (alarm){
         if (alarm.name === "update") {
             checkforredditposts();
         }
