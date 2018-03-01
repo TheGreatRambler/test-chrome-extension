@@ -54,10 +54,16 @@ chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststor
             console.log("no.");
         }
         console.log("time to next check: " + timebetweenupdates + " secomds");
+        createtimeout();
+    }
+    
+    function createtimeout() {
         chrome.alarms.create("update", {
             when: Date.now() + (timebetweenupdates * 1000)
         });
     }
+    
+    createtimeout();
     
     chrome.alarms.onAlarm.addListener(function (){
         if (alarm.name === "update") {
