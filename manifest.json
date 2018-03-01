@@ -16,11 +16,12 @@
    "default_popup": "popup.html"
   },
   
-  "background": [
-    {
-      "scripts": ["jquery.js", "content.js"]
-    }
-  ],
+  "background": {
+    "scripts": [
+      "jquery.js",
+      "content.js"
+    ]
+  },
   
   "permissions": [
     "activeTab",
