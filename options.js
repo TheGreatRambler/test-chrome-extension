@@ -31,5 +31,4 @@ function start() {
 }
 
 document.addEventListener('DOMContentLoaded', start);
-document.getElementById('optionssubmit').addEventListener('click',
-    save_options);
+document.getElementById('optionssubmit').addEventListener('click', save_options);
