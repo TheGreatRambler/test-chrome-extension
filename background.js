@@ -27,7 +27,7 @@ chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststor
     }
 
     function checkforredditposts() {
-        if (continue && chosensubreddit) {
+        if (docontinue && chosensubreddit) {
             $.ajax({
                 crossDomain: true,
                 dataType: "text",
