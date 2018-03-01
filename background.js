@@ -53,6 +53,7 @@ chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststor
         } else {
             console.log("no.");
         }
+        console.log("time to next check: " + timebetweenupdates + " secomds");
         window.setTimeout(checkforredditposts, timebetweenupdates * 1000);
     }
     
