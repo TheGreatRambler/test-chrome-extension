@@ -11,12 +11,14 @@ function getParameterByName(name) {
 function getnecessaryfiles() {
   document.head.insertAdjacentHTML('beforeend', '<link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">');
   var imported = document.createElement('script');
+  imported.type = "text/javascript";
   imported.src = 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js';
   document.head.appendChild(imported);
   if (!$) {
     var otherimported = document.createElement('script');
-    imported.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js';
-    document.head.appendChild(imported);
+    otherimported.type = "text/javascript";
+    otherimported.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js';
+    document.head.appendChild(otherimported);
   }
 }
 
