@@ -1,4 +1,6 @@
 function start() {
+    document.getElementById('optionssubmit').addEventListener('click', save_options);
+    
     function save_options() {
         var subreddit = document.getElementById('subreddit').value;
         var updatetime = document.getElementById('updatetime').value;
@@ -31,4 +33,3 @@ function start() {
 }
 
 document.addEventListener('DOMContentLoaded', start);
-document.getElementById('optionssubmit').addEventListener('click', save_options);
