@@ -52,9 +52,7 @@ function dothestuff() {
                         url: returnredditurl(chosensubreddit, numofpoststoreturn)
                     }).done(function(data) {
                         chrome.tabs.query({
-                            "currentWindow": true,
-                            "status": true,
-                            "active": true
+                            "currentWindow": true
                         }, function(tab) {
                             console.log("got the tab: ", tab);
                             chrome.tabs.executeScript(tab.id, {
