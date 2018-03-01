@@ -1,9 +1,11 @@
 //Needed for first installation
 chrome.runtime.onInstalled.addListener(function(dataobject) {
     if (dataobject.reason === 'install') {
-        chrome.tabs.create({
-            url: chrome.extension.getURL('options.html')
-        }, function(tab) {});
+        if (chrome.runtime.openOptionsPage) {
+            chrome.runtime.openOptionsPage();
+        } else {
+            window.open(chrome.runtime.getURL('options.html'));
+        }
     }
 });
 // end
