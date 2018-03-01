@@ -25,7 +25,7 @@ chrome.runtime.onInstalled.addListener(function(dataobject) {
 
 var docontinue = true;
 chrome.storage.sync.get(["timebetweenupdates", "chosensubreddit", "numofpoststoreturn", "timetokeepup"], function(items) {
-    console.log("accessed variables");
+    console.log("accessed variables: ", items);
     var timebetweenupdates = items[0]; // in seconds
     var chosensubreddit = items[1];
     var numofpoststoreturn = items[2];
