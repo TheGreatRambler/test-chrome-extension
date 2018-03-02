@@ -59,7 +59,7 @@ function dothestuff() {
                             chrome.tabs.sendMessage(tab[0].id, {
                                 jsondata: data,
                                 timetokeepup: timeofpostsappear,
-                                flag: "incoming_data"
+                                flag: "%%reddit_incoming_data"
                             }, function(response) {
                                 console.log("message sent");
                             });
