@@ -22,6 +22,15 @@ function getnecessaryfiles() {
   }
 }
 
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+   if (request.greeting == "hello") {
+      
+   }
+});
+
+jsondata: data,
+                                timetokeepup: timeofpostsappear
+
 var currentposts = JSON.parse(getParameterByName("data"));
 getnecessaryfiles();
 var postsarray = [];
