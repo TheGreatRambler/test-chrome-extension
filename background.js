@@ -56,9 +56,12 @@ function dothestuff() {
                             "active": true
                         }, function(tab) {
                             console.log("got the tab: ", tab[0]);
-                            chrome.tabs.executeScript(tab[0].id, {
-                                file: "/displaypost.js?data=" + data + "&timetokeepup=" + timeofpostsappear
-                            }, function(response) {});
+                            chrome.tabs.sendMessage(tab[0].id, {
+                                jsondata: data,
+                                timetokeepup: timeofpostsappear
+                            }, function(response) {
+                                console.log("message sent");
+                            });
                         });
                     });
                 } else {
