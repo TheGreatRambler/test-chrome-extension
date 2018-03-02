@@ -36,7 +36,7 @@ function commenceprocess(currentposts, timetokeepup) {
 }
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    if (request.flag === "incoming_data") {
+    if (request.flag && request.flag === "%%reddit_incoming_data") {
         commenceprocess(request.jsondata, request.timetokeepup);
     }
 });
