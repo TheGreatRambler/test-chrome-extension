@@ -58,7 +58,8 @@ function dothestuff() {
                             console.log("got the tab: ", tab[0]);
                             chrome.tabs.sendMessage(tab[0].id, {
                                 jsondata: data,
-                                timetokeepup: timeofpostsappear
+                                timetokeepup: timeofpostsappear,
+                                flag: "incoming_data"
                             }, function(response) {
                                 console.log("message sent");
                             });
