@@ -14,9 +14,9 @@
    "default_popup": "popup.html"
   },
   
-  "content_scripts": {
+  "content_scripts": [{
     "js": ["displaypost.js"]
-  },
+  }],
   
   "background": {
     "scripts": [
