@@ -16,7 +16,7 @@
   
   "content_scripts": {
     "js": ["displaypost.js"]
-  }
+  },
   
   "background": {
     "scripts": [
